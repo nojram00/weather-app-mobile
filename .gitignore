@@ -32,3 +32,4 @@ yarn-error.log*
 
 
 /android-build
+resources/android/**/*
