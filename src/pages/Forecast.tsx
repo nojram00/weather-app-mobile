@@ -1,6 +1,5 @@
 import { IonPage, IonHeader, IonToolbar, IonTitle, IonContent } from '@ionic/react'
 import React from 'react'
-import ExploreContainer from '../components/ExploreContainer'
 import WeatherContainer from '../components/WeatherContainer'
 
 export default function Forecast() {
