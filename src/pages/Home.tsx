@@ -79,16 +79,10 @@ export default function Home() {
         hour: "2-digit",
         minute: "2-digit",
         second: "2-digit",
+        hour12: true
       });
-      el.textContent = time;
 
-      setTimeout(() => {
-        el.textContent = new Date().toLocaleTimeString([], {
-          hour: "2-digit",
-          minute: "2-digit",
-          second: "2-digit",
-        });
-      }, 1000);
+      el.textContent = time;
     };
 
     updateTime();
@@ -138,7 +132,8 @@ export default function Home() {
             hour: "2-digit",
             minute: "2-digit",
             second: "2-digit",
-            timeZone: 'Asia/Manila'
+            timeZone: 'Asia/Manila',
+            hour12: true
           }),
           sunset: new Date(_sunset.getTime() + offsetMs).toLocaleTimeString("en-PH", {
             hour: "2-digit",

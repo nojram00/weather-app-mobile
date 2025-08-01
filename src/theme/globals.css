@@ -1,0 +1,14 @@
+.container {
+    min-height: 100vh;
+    /** Fallback Background In case data-mode not provided. */
+    background: linear-gradient(#caf0f8, #00b4d8); 
+    text-align: center;
+
+    &[data-mode="day"]{
+        background: linear-gradient(#caf0f8, #00b4d8);
+    }
+
+    &[data-mode="night"]{
+        background: linear-gradient(#415a77, #0d1b2a);
+    }
+}

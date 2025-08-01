@@ -29,8 +29,13 @@ import '@ionic/react/css/text-transformation.css';
 import '@ionic/react/css/flex-utils.css';
 import '@ionic/react/css/display.css';
 
+/* Global CSS */
+import './theme/globals.css';
+
 /* Theme variables */
 import './theme/variables.css';
+
+/* App Pages */
 import Home from './pages/Home';
 import Forecast from './pages/Forecast';
 import Astronomy from './pages/Astronomy';
@@ -66,7 +71,7 @@ const App: React.FC = () => (
           </IonTabButton>
           <IonTabButton tab="astronomy" href="/astronomy">
             <IonIcon aria-hidden="true" icon={planetOutline} />
-            <IonLabel>Astronomy</IonLabel>
+            <IonLabel>Sunrise/Sunset</IonLabel>
           </IonTabButton>
         </IonTabBar>
       </IonTabs>

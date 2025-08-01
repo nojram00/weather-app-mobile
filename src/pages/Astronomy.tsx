@@ -1,22 +1,22 @@
 import { IonPage, IonHeader, IonToolbar, IonTitle, IonContent } from '@ionic/react'
 import React from 'react'
-import ExploreContainer from '../components/ExploreContainer'
+import AstroContainer from '../components/AstroContainer'
 
 export default function Astronomy() {
   return (
     <IonPage>
         <IonHeader>
             <IonToolbar>
-                <IonTitle>Astronomy</IonTitle>
+                <IonTitle>Sunrise / Sunset</IonTitle>
             </IonToolbar>
         </IonHeader>
         <IonContent fullscreen>
             <IonHeader collapse='condense'>
                 <IonToolbar>
-                    <IonTitle size='large'>Astronomy</IonTitle>
+                    <IonTitle size='large'>Sunrise / Sunset</IonTitle>
                 </IonToolbar>
             </IonHeader>
-            <ExploreContainer name='Astronomy'></ExploreContainer>
+            <AstroContainer />
         </IonContent>
     </IonPage>
   )
