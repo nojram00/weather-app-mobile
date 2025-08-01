@@ -1,0 +1,65 @@
+#container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+
+    & > .content-1 {
+        display: flex;
+        flex-direction: column;
+        justify-items: center;
+        align-items: center;
+        gap: 20px;
+    }
+}
+
+.sunrise {
+  color: black;
+  background: linear-gradient(#caf0f8, #00b4d8);
+  box-shadow: 2px 2px 2px #0077b6;
+}
+
+.sunset {
+  color: black;
+  background:  linear-gradient(#ffba08, #dc2f02);
+  box-shadow: 2px 2px 2px #9d0208;
+}
+
+.header {
+  color: black;
+}
+
+
+.time-card{
+  &[data-time="day"]{
+    color: black;
+    background: linear-gradient(#caf0f8, #00b4d8);
+    box-shadow: 2px 2px 2px 2px #0077b6;
+  }
+  &[data-time="afternoon"]{
+    color: black;
+    background: linear-gradient(#ffba08, #dc2f02);
+    box-shadow: 2px 2px 2px 2px #9d0208;
+  }
+  &[data-time="night"]{
+    color: white;
+    background: linear-gradient(#415a77, #0d1b2a);
+    box-shadow: 2px 2px 2px 2px #1b263b;
+  }
+}
+
+#wrapper {
+  height: 100%;
+
+  &[data-mode="day"]{
+    background: linear-gradient(#caf0f8, #00b4d8);
+  }
+  
+  &[data-mode="afternoon"]{
+    background: linear-gradient(#caf0f8, #00b4d8);
+  }
+
+  &[data-mode="night"]{
+    background: linear-gradient(#415a77, #0d1b2a);
+  }
+}

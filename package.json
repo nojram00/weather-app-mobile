@@ -1,8 +1,12 @@
 {
   "name": "weather-app-mobile-2",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "private": true,
   "dependencies": {
+    "@capacitor/android": "^7.4.2",
+    "@capacitor/cli": "^7.4.2",
+    "@capacitor/core": "^7.4.2",
+    "@capacitor/geolocation": "^7.1.4",
     "@ionic/react": "^7.0.0",
     "@ionic/react-router": "^7.0.0",
     "@testing-library/jest-dom": "^5.11.9",
@@ -47,7 +51,8 @@
     "build": "react-scripts build",
     "test": "react-scripts test --transformIgnorePatterns 'node_modules/(?!(@ionic/react|@ionic/react-router|@ionic/core|@stencil/core|ionicons)/)'",
     "eject": "react-scripts eject",
-    "lint": "eslint --ext .ts,.tsx src"
+    "lint": "eslint --ext .ts,.tsx src",
+    "build-sync": "ionic build && npx cap sync"
   },
   "browserslist": [
     "Chrome >=79",
