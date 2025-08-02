@@ -24,7 +24,7 @@ export default function WeatherContainer() {
   const [timeState, setTimeState] = useState("day");
   const [pending, setPending] = useState(true);
 
-  const { data, fetchData } = useWeather<{
+  const [data, fetchData] = useWeather<{
     hourly: {
       rain: number[];
       time: string[];

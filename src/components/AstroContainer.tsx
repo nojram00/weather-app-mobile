@@ -30,7 +30,7 @@ export default function AstroContainer() {
     }
   }, [time]);
 
-  const { data, fetchData } = useWeather<{
+  const [data, fetchData] = useWeather<{
     daily: {
       time: [];
       sunrise: [];

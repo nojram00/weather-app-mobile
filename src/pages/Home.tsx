@@ -15,6 +15,8 @@ import React, { useState } from "react";
 import "./Home.css";
 import { hourToMs } from "../utils/timeConverter";
 import { Geolocation } from '@capacitor/geolocation';
+import ForecastConditions from "../components/ForecastConditions";
+import WindCoastal from "../components/WindCoastal";
 
 export default function Home() {
   const greetingRef = React.useRef<HTMLSpanElement>(null);
@@ -199,6 +201,13 @@ export default function Home() {
               </IonCol>
             </IonRow>
           </IonGrid>
+
+          <div>
+            <ForecastConditions />
+          </div>
+          <div>
+            <WindCoastal />
+          </div>
         </div>
       </IonContent>
     </IonPage>
