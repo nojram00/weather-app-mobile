@@ -1,6 +1,6 @@
 {
   "name": "weather-app-mobile-2",
-  "version": "1.0.5",
+  "version": "2.0.0",
   "private": true,
   "dependencies": {
     "@capacitor/android": "^7.4.2",
