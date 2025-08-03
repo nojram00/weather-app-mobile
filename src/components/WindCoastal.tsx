@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import useWeather from "../hooks/weather";
 import "./WindCoastal.css";
 import {
@@ -11,10 +11,11 @@ import {
   IonCardTitle,
   IonCardSubtitle,
   IonCardContent,
+  IonSpinner,
 } from "@ionic/react";
 
 export default function WindCoastal() {
-  const [wind_coastalWaters, fetchWindCoastal] = useWeather<
+  const [wind_coastalWaters, fetchWindCoastal, error] = useWeather<
     {
       _id: string;
       date: string;
@@ -25,9 +26,34 @@ export default function WindCoastal() {
     }[]
   >("https://weather-api-781h.onrender.com/wind-and-coastal-waters");
 
+  const [pending, setPending] = useState(true)
+
   useEffect(() => {
     fetchWindCoastal();
   }, [fetchWindCoastal]);
+
+  useEffect(() => {
+    if (wind_coastalWaters) {
+      setPending(false)
+    }
+  }, [wind_coastalWaters]);
+
+  if(pending){
+    return(
+      <div className="container">
+        <IonSpinner></IonSpinner>
+      </div>
+    )
+  }
+
+  if(error){
+    return(
+      <div className="container">
+        <h1>Error</h1>
+      </div>
+    )
+  }
+
   return (
     <div className="container">
       <IonGrid>

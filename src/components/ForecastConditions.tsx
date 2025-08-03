@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import "./ForecastConditions.css";
 import useWeather from "../hooks/weather";
 import { Geolocation } from "@capacitor/geolocation";
@@ -14,10 +14,11 @@ import {
   IonLabel,
   IonList,
   IonRow,
+  IonSpinner,
 } from "@ionic/react";
 
 export default function ForecastConditions() {
-  const [forecast_cond, fetchForecastCond] = useWeather<
+  const [forecast_cond, fetchForecastCond, error] = useWeather<
     {
       _id: string;
       date: string;
@@ -27,31 +28,35 @@ export default function ForecastConditions() {
     }[]
   >("https://weather-api-781h.onrender.com/forecast-conditions");
 
+  const [pending, setPending] = useState(true)
   useEffect(() => {
     fetchForecastCond();
   }, [fetchForecastCond]);
 
   useEffect(() => {
     if (forecast_cond) {
-      console.log("Data: ", forecast_cond);
+      setPending(false)
     }
   }, [forecast_cond]);
 
+  if(pending){
+    return(
+      <div className="container">
+        <IonSpinner></IonSpinner>
+      </div>
+    )
+  }
+
+  if(error){
+    return(
+      <div className="container">
+        <h1>Error</h1>
+      </div>
+    )
+  }
+
   return (
     <div className="container">
-      {/* <IonList lines="none" className="p-10">
-        <IonLabel>Forecast Conditions</IonLabel>
-        { forecast_cond && forecast_cond.map((f, idx) => (
-            <IonItem key={idx}>
-                <IonCard>
-                    <IonCardHeader>
-                        { new Date(f.date).toLocaleString() }
-                    </IonCardHeader>
-                </IonCard>
-            </IonItem>
-        ))}
-      </IonList> */}
-
       <IonGrid>
         {forecast_cond &&
           forecast_cond.map((f, idx) => (
