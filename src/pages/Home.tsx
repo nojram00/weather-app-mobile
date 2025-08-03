@@ -1,4 +1,6 @@
 import {
+  IonButton,
+  IonButtons,
   IonCard,
   IonCardContent,
   IonCardHeader,
@@ -6,6 +8,7 @@ import {
   IonContent,
   IonGrid,
   IonHeader,
+  IonMenuButton,
   IonPage,
   IonRow,
   IonTitle,
@@ -17,6 +20,7 @@ import { hourToMs } from "../utils/timeConverter";
 import { Geolocation } from '@capacitor/geolocation';
 import ForecastConditions from "../components/ForecastConditions";
 import WindCoastal from "../components/WindCoastal";
+import Sidebar from "../components/Sidebar";
 
 export default function Home() {
   const greetingRef = React.useRef<HTMLSpanElement>(null);
@@ -149,10 +153,14 @@ export default function Home() {
   }, [coords]);
 
   return (
-    <IonPage>
+    <IonPage id="main-content">
       <IonHeader>
         <IonToolbar>
           <IonTitle>Home</IonTitle>
+          <IonButtons slot="start">
+            <IonMenuButton>
+            </IonMenuButton>
+          </IonButtons>
         </IonToolbar>
       </IonHeader>
       <IonContent fullscreen>
@@ -201,13 +209,6 @@ export default function Home() {
               </IonCol>
             </IonRow>
           </IonGrid>
-
-          <div>
-            <ForecastConditions />
-          </div>
-          <div>
-            <WindCoastal />
-          </div>
         </div>
       </IonContent>
     </IonPage>

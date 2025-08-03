@@ -38,7 +38,7 @@ export default function ForecastConditions() {
   }, [forecast_cond]);
 
   return (
-    <div className="">
+    <div className="container">
       {/* <IonList lines="none" className="p-10">
         <IonLabel>Forecast Conditions</IonLabel>
         { forecast_cond && forecast_cond.map((f, idx) => (
@@ -53,11 +53,6 @@ export default function ForecastConditions() {
       </IonList> */}
 
       <IonGrid>
-        <IonRow>
-          <IonCol>
-            <IonLabel className="black">Forecast Conditions</IonLabel>
-          </IonCol>
-        </IonRow>
         {forecast_cond &&
           forecast_cond.map((f, idx) => (
             <IonRow key={idx} id={f._id}>
@@ -65,7 +60,7 @@ export default function ForecastConditions() {
                 <IonCard color="medium">
                   <IonCardHeader className="forecast-header">
                     <IonCardTitle>
-                      {new Date(f.date).toLocaleString()}
+                      {new Date(f.date).toLocaleDateString([], { day: '2-digit', month: 'long', year: 'numeric', weekday: 'long'})}
                     </IonCardTitle>
                     <IonCardSubtitle>{f.place}</IonCardSubtitle>
                   </IonCardHeader>

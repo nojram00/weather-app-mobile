@@ -8,14 +8,14 @@ import {
   IonMenuButton,
 } from "@ionic/react";
 import React from "react";
-import WeatherContainer from "../components/WeatherContainer";
+import ForecastConditions from "../components/ForecastConditions";
 
-export default function Forecast() {
+export default function ForecastAdvisory() {
   return (
     <IonPage id="main-content">
       <IonHeader>
         <IonToolbar>
-          <IonTitle>Forecast</IonTitle>
+          <IonTitle>Advisory - Forecast Conditions</IonTitle>
           <IonButtons slot="start">
             <IonMenuButton></IonMenuButton>
           </IonButtons>
@@ -24,11 +24,10 @@ export default function Forecast() {
       <IonContent fullscreen>
         <IonHeader collapse="condense">
           <IonToolbar>
-            <IonTitle size="large">Forecast</IonTitle>
+            <IonTitle size="large">Sunrise / Sunset</IonTitle>
           </IonToolbar>
         </IonHeader>
-        {/* <ExploreContainer name='Forecast'></ExploreContainer> */}
-        <WeatherContainer />
+        <ForecastConditions />
       </IonContent>
     </IonPage>
   );

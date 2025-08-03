@@ -29,13 +29,8 @@ export default function WindCoastal() {
     fetchWindCoastal();
   }, [fetchWindCoastal]);
   return (
-    <div className="">
+    <div className="container">
       <IonGrid>
-        <IonRow>
-          <IonCol>
-            <IonLabel className="black">Wind and Coastal Waters</IonLabel>
-          </IonCol>
-        </IonRow>
         {wind_coastalWaters &&
           wind_coastalWaters.map((w, idx) => (
             <IonRow key={idx} id={w._id}>
