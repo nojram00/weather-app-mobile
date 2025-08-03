@@ -52,7 +52,9 @@
     "test": "react-scripts test --transformIgnorePatterns 'node_modules/(?!(@ionic/react|@ionic/react-router|@ionic/core|@stencil/core|ionicons)/)'",
     "eject": "react-scripts eject",
     "lint": "eslint --ext .ts,.tsx src",
-    "build-sync": "ionic build && npx cap sync"
+    "build-sync": "ionic build && npx cap sync",
+    "open:android": "npx cap open android",
+    "android": "npx cap run android"
   },
   "browserslist": [
     "Chrome >=79",
