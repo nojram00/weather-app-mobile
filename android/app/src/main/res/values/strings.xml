@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='utf-8'?>
 <resources>
-    <string name="app_name">weather-app-mobile-2</string>
-    <string name="title_activity_main">weather-app-mobile-2</string>
+    <string name="app_name">Weatherama</string>
+    <string name="title_activity_main">Weatherama</string>
     <string name="package_name">com.weather.app</string>
     <string name="custom_url_scheme">com.weather.app</string>
 </resources>

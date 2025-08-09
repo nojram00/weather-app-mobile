@@ -15,19 +15,23 @@ export default function useWeather<T>(url? : string): [ data: T | null, fetchDat
       parsed = parsedUrl(_params)
     }
     const _url = url ?? 'https://api.open-meteo.com/v1/forecast';
-    if(Capacitor.isNativePlatform()){
-      CapacitorHttp.get({
-        url: `${_url}?${parsed}`
-      }).then(res => {
-        setData(JSON.parse(res.data))
-      }).catch((err) => {console.warn(err); setIsError(true)})
-    }
-    else{
-      fetch(`${_url}?${parsed}`).then(res => res.json())
+    // if(Capacitor.isNativePlatform()){
+    //   CapacitorHttp.get({
+    //     url: `${_url}?${parsed}`
+    //   }).then(res => {
+    //     setData(JSON.parse(res.data))
+    //   }).catch((err) => {console.warn(err); setIsError(true)})
+    // }
+    // else{
+    //   fetch(`${_url}?${parsed}`).then(res => res.json())
+    //   .then(_data => {
+    //       setData(_data)
+    //   }).catch((err) => {console.warn(err); setIsError(true)})
+    // }
+    fetch(`${_url}?${parsed}`).then(res => res.json())
       .then(_data => {
           setData(_data)
       }).catch((err) => {console.warn(err); setIsError(true)})
-    }
   }, [])
 
   return [ data, fetchData, isError ]
