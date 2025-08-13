@@ -7,26 +7,23 @@ import {
   IonButtons,
   IonMenuButton,
 } from "@ionic/react";
-import React from "react";
 import AstroContainer from "../components/AstroContainer";
+import "./Home.css"; // Reuse the weather app styles
+
+import React from "react";
 
 export default function Astronomy() {
   return (
     <IonPage id="main-content">
       <IonHeader>
-        <IonToolbar>
+        <IonToolbar className="weather-header">
           <IonButtons slot="start">
             <IonMenuButton></IonMenuButton>
           </IonButtons>
-          <IonTitle>Sunrise / Sunset</IonTitle>
+          <IonTitle>Astronomy</IonTitle>
         </IonToolbar>
       </IonHeader>
       <IonContent fullscreen>
-        <IonHeader collapse="condense">
-          <IonToolbar>
-            <IonTitle size="large">Sunrise / Sunset</IonTitle>
-          </IonToolbar>
-        </IonHeader>
         <AstroContainer />
       </IonContent>
     </IonPage>

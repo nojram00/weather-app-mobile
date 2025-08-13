@@ -1,7 +1,185 @@
-.p-10 {
-    padding: 5rem;
+/* Forecast Container Styles */
+.forecast-container {
+  min-height: 100vh;
+  padding: 0;
+
+  &[data-mode="day"]{
+    background: linear-gradient(135deg, #74b9ff 0%, #0984e3 100%);
+  }
+  
+  &[data-mode="night"]{
+    background: linear-gradient(135deg, #2d3436 0%, #636e72 100%);
+  }
 }
 
-span.divider {
-    width: 20px;
+.forecast-grid {
+  padding: 20px 16px;
+  max-width: 100%;
+}
+
+/* Loading Styles */
+.loading-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 50vh;
+  gap: 16px;
+}
+
+.forecast-spinner {
+  --color: white;
+  width: 48px;
+  height: 48px;
+}
+
+.loading-text {
+  color: white;
+  font-size: 16px;
+  margin: 0;
+  opacity: 0.8;
+}
+
+/* Forecast Card Styles */
+.forecast-card {
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(20px);
+  border-radius: 16px;
+  margin: 8px 0;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: none;
+}
+
+.forecast-card ion-card-content {
+  padding: 20px;
+}
+
+.forecast-item {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  color: white;
+}
+
+/* Day Information */
+.forecast-day {
+  display: flex;
+  flex-direction: column;
+  min-width: 80px;
+}
+
+.day-name {
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 2px;
+}
+
+.date {
+  font-size: 12px;
+  opacity: 0.7;
+  font-weight: 500;
+}
+
+/* Weather Icon and Description */
+.forecast-weather {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 1;
+  gap: 4px;
+}
+
+.forecast-icon {
+  font-size: 32px;
+  color: white;
+}
+
+.weather-desc {
+  font-size: 12px;
+  opacity: 0.8;
+  text-align: center;
+  font-weight: 500;
+}
+
+/* Temperature */
+.forecast-temp {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  min-width: 60px;
+}
+
+.temp-high {
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.temp-low {
+  font-size: 16px;
+  opacity: 0.7;
+  font-weight: 500;
+}
+
+/* Forecast Details */
+.forecast-details {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  min-width: 60px;
+}
+
+.detail-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  opacity: 0.8;
+}
+
+.detail-icon-small {
+  font-size: 16px;
+  color: white;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .forecast-grid {
+    padding: 16px 12px;
+  }
+  
+  .forecast-item {
+    gap: 12px;
+  }
+  
+  .forecast-day {
+    min-width: 70px;
+  }
+  
+  .day-name {
+    font-size: 14px;
+  }
+  
+  .forecast-icon {
+    font-size: 28px;
+  }
+  
+  .temp-high {
+    font-size: 18px;
+  }
+  
+  .temp-low {
+    font-size: 14px;
+  }
+}
+
+/* Today's forecast highlight */
+.forecast-card:first-child {
+  background: rgba(255, 255, 255, 0.25);
+  border: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+.forecast-card:first-child .day-name {
+  color: #fff;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
 }

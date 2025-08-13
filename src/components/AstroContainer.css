@@ -1,7 +1,303 @@
-.p-10{
-    padding: 5rem;
+/* Astronomy Container Styles */
+.astronomy-container {
+  min-height: 100vh;
+  padding: 0;
+
+  &[data-mode="day"]{
+    background: linear-gradient(135deg, #74b9ff 0%, #0984e3 100%);
+  }
+  
+  &[data-mode="night"]{
+    background: linear-gradient(135deg, #2d3436 0%, #636e72 100%);
+  }
 }
 
-span.divider {
-    width: 20px;
+.astronomy-grid {
+  padding: 20px 16px;
+  max-width: 100%;
+}
+
+/* Loading Styles */
+.loading-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 50vh;
+  gap: 16px;
+}
+
+.astronomy-spinner {
+  --color: white;
+  width: 48px;
+  height: 48px;
+}
+
+.loading-text {
+  color: white;
+  font-size: 16px;
+  margin: 0;
+  opacity: 0.8;
+}
+
+/* Current Status Card */
+.current-status-card {
+  background: rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(20px);
+  border-radius: 20px;
+  margin: 8px 0 24px 0;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  box-shadow: none;
+}
+
+.current-status-card ion-card-content {
+  padding: 24px;
+}
+
+.status-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+
+.location-icon {
+  font-size: 20px;
+  color: white;
+  opacity: 0.9;
+}
+
+.location-name {
+  color: white;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.sun-status {
+  display: flex;
+  justify-content: center;
+}
+
+.status-info {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.status-icon {
+  font-size: 48px;
+  color: white;
+}
+
+.status-text {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.status-label {
+  color: white;
+  font-size: 14px;
+  opacity: 0.8;
+  font-weight: 500;
+}
+
+.status-time {
+  color: white;
+  font-size: 24px;
+  font-weight: 600;
+}
+
+/* Astronomy Card Styles */
+.astronomy-card {
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(20px);
+  border-radius: 16px;
+  margin: 8px 0;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: none;
+}
+
+.astronomy-card ion-card-content {
+  padding: 20px;
+}
+
+.astronomy-item {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  color: white;
+}
+
+/* Day Information */
+.astronomy-day {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.calendar-icon {
+  font-size: 24px;
+  color: white;
+  opacity: 0.9;
+}
+
+.day-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.day-name {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.date {
+  font-size: 14px;
+  opacity: 0.7;
+  font-weight: 500;
+}
+
+/* Sun Times */
+.sun-times {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.sun-event {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  flex: 1;
+}
+
+.event-header {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.event-arrow {
+  font-size: 16px;
+  color: white;
+  opacity: 0.8;
+}
+
+.sun-icon, .moon-icon {
+  font-size: 24px;
+  color: white;
+}
+
+.event-label {
+  font-size: 14px;
+  font-weight: 500;
+  opacity: 0.9;
+}
+
+.event-time {
+  font-size: 18px;
+  font-weight: 600;
+  text-align: center;
+}
+
+.sunrise-event {
+  background: rgba(255, 193, 7, 0.2);
+  padding: 16px;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 193, 7, 0.3);
+}
+
+.sunset-event {
+  background: rgba(255, 87, 34, 0.2);
+  padding: 16px;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 87, 34, 0.3);
+}
+
+/* Day Length */
+.day-length {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 16px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.time-icon {
+  font-size: 24px;
+  color: white;
+  opacity: 0.9;
+}
+
+.length-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+}
+
+.length-label {
+  font-size: 12px;
+  opacity: 0.7;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.length-value {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+/* Today's card highlight */
+.astronomy-card:nth-child(2) {
+  background: rgba(255, 255, 255, 0.25);
+  border: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .astronomy-grid {
+    padding: 16px 12px;
+  }
+  
+  .current-status-card ion-card-content {
+    padding: 20px;
+  }
+  
+  .status-icon {
+    font-size: 40px;
+  }
+  
+  .status-time {
+    font-size: 20px;
+  }
+  
+  .astronomy-item {
+    gap: 16px;
+  }
+  
+  .sun-times {
+    gap: 16px;
+  }
+  
+  .sun-event {
+    gap: 6px;
+  }
+  
+  .sunrise-event, .sunset-event {
+    padding: 12px;
+  }
+  
+  .event-time {
+    font-size: 16px;
+  }
 }

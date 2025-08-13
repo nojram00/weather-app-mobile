@@ -1,65 +1,200 @@
-#container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100%;
-
-    & > .content-1 {
-        display: flex;
-        flex-direction: column;
-        justify-items: center;
-        align-items: center;
-        gap: 20px;
-    }
-}
-
-.sunrise {
-  color: black;
-  background: linear-gradient(#caf0f8, #00b4d8);
-  box-shadow: 2px 2px 2px #0077b6;
-}
-
-.sunset {
-  color: black;
-  background:  linear-gradient(#ffba08, #dc2f02);
-  box-shadow: 2px 2px 2px #9d0208;
-}
-
-.header {
-  color: black;
-}
-
-
-.time-card{
-  &[data-time="day"]{
-    color: black;
-    background: linear-gradient(#caf0f8, #00b4d8);
-    box-shadow: 2px 2px 2px 2px #0077b6;
-  }
-  &[data-time="afternoon"]{
-    color: black;
-    background: linear-gradient(#ffba08, #dc2f02);
-    box-shadow: 2px 2px 2px 2px #9d0208;
-  }
-  &[data-time="night"]{
-    color: white;
-    background: linear-gradient(#415a77, #0d1b2a);
-    box-shadow: 2px 2px 2px 2px #1b263b;
-  }
-}
-
+/* Weather App Styles */
 #wrapper {
   min-height: 100vh;
+  padding: 0;
 
   &[data-mode="day"]{
-    background: linear-gradient(#caf0f8, #00b4d8);
+    background: linear-gradient(135deg, #74b9ff 0%, #0984e3 100%);
   }
   
   &[data-mode="afternoon"]{
-    background: linear-gradient(#caf0f8, #00b4d8);
+    background: linear-gradient(135deg, #fd79a8 0%, #e84393 100%);
   }
 
   &[data-mode="night"]{
-    background: linear-gradient(#415a77, #0d1b2a);
+    background: linear-gradient(135deg, #2d3436 0%, #636e72 100%);
+  }
+}
+
+.weather-header {
+  --background: transparent;
+  --color: white;
+}
+
+.weather-grid {
+  padding: 20px 16px;
+  max-width: 100%;
+}
+
+/* Main Weather Card */
+.main-weather-card {
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(20px);
+  border-radius: 24px;
+  padding: 32px 24px;
+  text-align: center;
+  color: white;
+  margin-bottom: 24px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.location {
+  font-size: 18px;
+  font-weight: 500;
+  margin-bottom: 16px;
+  opacity: 0.9;
+}
+
+.current-weather {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.weather-icon {
+  font-size: 80px;
+  margin-bottom: 16px;
+  color: white;
+}
+
+.temperature {
+  font-size: 72px;
+  font-weight: 300;
+  line-height: 1;
+  margin-bottom: 8px;
+}
+
+.greeting-time {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  opacity: 0.9;
+}
+
+.greeting {
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.date {
+  font-size: 14px;
+  opacity: 0.8;
+}
+
+.time {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+/* Weather Detail Cards */
+.weather-detail-card {
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(20px);
+  border-radius: 16px;
+  margin: 8px 0;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: none;
+}
+
+.weather-detail-card ion-card-content {
+  padding: 16px;
+}
+
+.detail-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.detail-icon {
+  font-size: 24px;
+  color: white;
+  opacity: 0.9;
+}
+
+.detail-info {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.detail-label {
+  font-size: 12px;
+  color: white;
+  opacity: 0.7;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.detail-value {
+  font-size: 18px;
+  color: white;
+  font-weight: 600;
+  margin-top: 2px;
+}
+
+/* Sun Cards */
+.sun-card {
+  border-radius: 16px;
+  margin: 8px 0;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: none;
+}
+
+.sun-card.sunrise {
+  background: linear-gradient(135deg, rgba(255, 193, 7, 0.3) 0%, rgba(255, 152, 0, 0.3) 100%);
+  backdrop-filter: blur(20px);
+}
+
+.sun-card.sunset {
+  background: linear-gradient(135deg, rgba(255, 87, 34, 0.3) 0%, rgba(244, 67, 54, 0.3) 100%);
+  backdrop-filter: blur(20px);
+}
+
+.sun-card ion-card-content {
+  padding: 16px;
+}
+
+.sun-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.sun-label {
+  font-size: 12px;
+  color: white;
+  opacity: 0.8;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 4px;
+}
+
+.sun-time {
+  font-size: 16px;
+  color: white;
+  font-weight: 600;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .weather-grid {
+    padding: 16px 12px;
+  }
+  
+  .main-weather-card {
+    padding: 24px 20px;
+  }
+  
+  .temperature {
+    font-size: 64px;
+  }
+  
+  .weather-icon {
+    font-size: 64px;
   }
 }

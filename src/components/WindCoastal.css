@@ -1,41 +1,446 @@
-.wc-container {
-    /* color: black; */
+/* Wind Container Styles */
+.wind-container {
+  min-height: 100vh;
+  padding: 0;
+
+  &[data-mode="day"]{
+    background: linear-gradient(135deg, #74b9ff 0%, #0984e3 100%);
+  }
+  
+  &[data-mode="night"]{
+    background: linear-gradient(135deg, #2d3436 0%, #636e72 100%);
+  }
+}
+
+.wind-grid {
+  padding: 20px 16px;
+  max-width: 100%;
+}
+
+/* Loading Styles */
+.loading-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 50vh;
+  gap: 16px;
+}
+
+.wind-spinner {
+  --color: white;
+  width: 48px;
+  height: 48px;
+}
+
+.loading-text {
+  color: white;
+  font-size: 16px;
+  margin: 0;
+  opacity: 0.8;
+}
+
+/* Error Styles */
+.error-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 50vh;
+  gap: 16px;
+  text-align: center;
+  padding: 20px;
+}
+
+.error-icon {
+  font-size: 64px;
+  color: white;
+  opacity: 0.8;
+}
+
+.error-title {
+  color: white;
+  font-size: 24px;
+  font-weight: 600;
+  margin: 0;
+}
+
+.error-message {
+  color: white;
+  font-size: 16px;
+  opacity: 0.8;
+  margin: 0;
+}
+
+/* Header Card */
+.wind-header-card {
+  background: rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(20px);
+  border-radius: 20px;
+  margin: 8px 0 24px 0;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  box-shadow: none;
+}
+
+.wind-header-card ion-card-content {
+  padding: 24px;
+}
+
+.header-content {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.header-icon {
+  font-size: 48px;
+  color: white;
+}
+
+.header-text {
+  flex: 1;
+}
+
+.header-title {
+  color: white;
+  font-size: 24px;
+  font-weight: 600;
+  margin: 0 0 8px 0;
+}
+
+.header-subtitle {
+  color: white;
+  font-size: 16px;
+  opacity: 0.8;
+  margin: 0;
+}
+
+/* Wind Card Styles */
+.wind-card {
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(20px);
+  border-radius: 16px;
+  margin: 8px 0;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: none;
+}
+
+.wind-card ion-card-content {
+  padding: 20px;
+}
+
+.wind-item {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  color: white;
+}
+
+/* Severity-based styling */
+.severity-severe {
+  background: rgba(244, 67, 54, 0.2);
+  border: 2px solid rgba(244, 67, 54, 0.4);
+}
+
+.severity-moderate {
+  background: rgba(255, 152, 0, 0.2);
+  border: 2px solid rgba(255, 152, 0, 0.4);
+}
+
+.severity-minor {
+  background: rgba(158, 158, 158, 0.2);
+  border: 2px solid rgba(158, 158, 158, 0.4);
+}
+
+.severity-calm {
+  background: rgba(76, 175, 80, 0.2);
+  border: 2px solid rgba(76, 175, 80, 0.4);
+}
+
+/* Wind Header */
+.wind-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 16px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.date-location {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  flex: 1;
+}
+
+.date-info {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.date-icon {
+  font-size: 20px;
+  color: white;
+  opacity: 0.9;
+}
+
+.date-text {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.day-name {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.date-full {
+  font-size: 14px;
+  opacity: 0.7;
+  font-weight: 500;
+}
+
+.location-info {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.location-icon {
+  font-size: 16px;
+  color: white;
+  opacity: 0.8;
+}
+
+.location-name {
+  font-size: 14px;
+  opacity: 0.8;
+  font-weight: 500;
+}
+
+.severity-badge {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 8px 12px;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.badge-icon {
+  font-size: 14px;
+}
+
+/* Wind Information Grid */
+.wind-info-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.wind-speed-card, .wind-direction-card {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  padding: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.info-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.info-icon {
+  font-size: 20px;
+  color: white;
+  opacity: 0.9;
+}
+
+.info-label {
+  font-size: 12px;
+  opacity: 0.7;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.info-content {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.info-value {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.mini-badge {
+  align-self: flex-start;
+  font-size: 10px;
+  padding: 4px 8px;
+}
+
+/* Coastal Section */
+.coastal-section {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.coastal-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.coastal-icon {
+  font-size: 20px;
+  color: white;
+  opacity: 0.9;
+}
+
+.coastal-label {
+  font-size: 14px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  flex: 1;
+}
+
+.coastal-badge {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 6px 10px;
+  border-radius: 10px;
+  font-size: 10px;
+  font-weight: 600;
+}
+
+.coastal-content {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 16px;
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 12px;
+  border-left: 4px solid rgba(33, 150, 243, 0.5);
+}
+
+.water-icon {
+  font-size: 24px;
+  color: white;
+  opacity: 0.8;
+  margin-top: 2px;
+}
+
+.coastal-text {
+  font-size: 16px;
+  line-height: 1.5;
+  margin: 0;
+  opacity: 0.9;
+  flex: 1;
+}
+
+/* No Wind Card */
+.no-wind-card {
+  background: rgba(76, 175, 80, 0.2);
+  backdrop-filter: blur(20px);
+  border-radius: 16px;
+  margin: 8px 0;
+  border: 2px solid rgba(76, 175, 80, 0.4);
+  box-shadow: none;
+}
+
+.no-wind-card ion-card-content {
+  padding: 32px 24px;
+}
+
+.no-wind-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 16px;
+}
+
+.no-wind-icon {
+  font-size: 64px;
+  color: white;
+}
+
+.no-wind-title {
+  color: white;
+  font-size: 20px;
+  font-weight: 600;
+  margin: 0;
+}
+
+.no-wind-message {
+  color: white;
+  font-size: 16px;
+  opacity: 0.8;
+  margin: 0;
+  line-height: 1.5;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .wind-grid {
+    padding: 16px 12px;
+  }
+  
+  .wind-header-card ion-card-content {
     padding: 20px;
-}
-
-.p-10 {
-    padding: 5rem;
-}
-
-.p-5 {
-    padding: 2.5rem;
-}
-
-.pt-5 {
-    padding-top: 2.5rem
-}
-
-.list {
-    background: linear-gradient(#caf0f8, #00b4d8);
-}
-
-.black { 
-    font-size: 2rem;
-    text-align: center;
-    color: black;
-}
-
-.flex-col {
-    display: flex;
+  }
+  
+  .header-content {
+    gap: 12px;
+  }
+  
+  .header-icon {
+    font-size: 40px;
+  }
+  
+  .header-title {
+    font-size: 20px;
+  }
+  
+  .wind-header {
     flex-direction: column;
-    gap: 20px
-}
-
-.forecast-header {
-    background: linear-gradient(#caf0f8, #00b4d8);
-}
-
-.forecast-content {
-    background: linear-gradient(#415a77, #0d1b2a);
-    color: white;
+    align-items: flex-start;
+    gap: 12px;
+  }
+  
+  .severity-badge {
+    align-self: flex-start;
+  }
+  
+  .wind-info-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+  
+  .wind-speed-card, .wind-direction-card {
+    padding: 12px;
+  }
+  
+  .info-value {
+    font-size: 16px;
+  }
+  
+  .coastal-content {
+    gap: 10px;
+  }
+  
+  .coastal-text {
+    font-size: 14px;
+  }
 }
